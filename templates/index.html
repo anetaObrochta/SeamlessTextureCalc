@@ -1,35 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Seamless Texture Calculator</title>
-</head>
-<body>
 
-<h1>Seamless Texture Calculator</h1>
+{% extends "base.html" %}
 
-{% if final_width %}
-    <p>The final width of the image should be:  {{ final_width }}</p>
-{% endif %}
+{% block content %}
+<form action="/" method="POST">
+<div class="container mt-5">
+    <h1 class="text-center mb-5">SEAMLESS TEXTURE CALCULATOR</h1>
 
-<form action="/" method="post">
-    <label for="pattern_width">Pattern Width:</label>
-    <input type="number" step="0.01" name="pattern_width" required><br><br>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-warning">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
 
-    <label for="image_width">Image Width:</label>
-    <input type="number" step="0.01" name="image_width" required><br><br>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="image-placeholder">IMAGE OF 2D PATTERN</div>
+        </div>
+        <div class="col-md-6">
+            <div class="image-placeholder">IMAGE OF TEXTURE WITH WIDTH CALLOUT</div>
+        </div>
+    </div>
 
-    <label for="rounding_method">Scale the texture:</label>
-    <select name="rounding_method">
-        <option value="up">Up</option>
-        <option value="down">Down</option>
-    </select><br><br>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <input type="text" name="pattern_width" placeholder="INPUT 2D PATTERN WIDTH">
+        </div>
+        <div class="col-md-6">
+            <input type="text" name="image_width" placeholder="INPUT TEXTURE WIDTH">
+        </div>
+    </div>
 
-    <input type="submit" value="Calculate">
+    <div class="row mb-4">
+        <div class="col-md-4 offset-md-2">
+            <select name="rounding_method">
+                <option value="up">DOWN</option>
+                <option value="down">UP</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button type="submit">Calculate</button>
+        </div>
+    </div>
+
+
+<div class="col-md-12 text-center">
+    <div class="final-width-label">FINAL IMAGE WIDTH:</div>
+    <div class="flex-container">
+        <input type="text" class="calculated-output" id="result" value="{% if final_width %}{{ final_width }}{% endif %}" readonly style="width: 300px;"> <!-- Adjust the width value as needed -->
+        <button id="copyButton" class="wide-button">COPY</button>
+    </div>
+</div>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="image-placeholder">IMAGE OF 3D GARMENT WITHOUT RESIZING</div>
+            <p class="text-center">BEFORE</p>
+        </div>
+        <div class="col-md-6">
+            <div class="image-placeholder">IMAGE OF 3D GARMENT WITHOUT RESIZING</div>
+            <p class="text-center">AFTER</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <div class="image-placeholder-small">IMAGE OF FINAL IMAGE FOR ORIGINAL SCALE UP</div>
+            <p>SCALE UP</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="image-placeholder-small">IMAGE OF FINAL IMAGE FOR ORIGINAL SCALE DOWN</div>
+            <p>SCALE DOWN</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.querySelector('#copyButton').addEventListener('click', function() {
+    // Get the input element with the result
+    let resultInput = document.getElementById('result');
+
+    // Select the content of the input
+    resultInput.select();
+
+    // Copy to clipboard
+    document.execCommand('copy');
+
+    alert("Copied to clipboard!");
+});
+
+</script>
+
 </form>
-
-{% for message in get_flashed_messages() %}
-    <p style="color:red;">{{ message }}</p>
-{% endfor %}
-
-</body>
-</html>
+{% endblock %}

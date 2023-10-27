@@ -1,0 +1,51 @@
+
+body {
+    background-color: #E9F4F7;
+}
+
+.image-placeholder, .image-placeholder-small {
+    background-color: #FFF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #999;
+}
+
+.image-placeholder {
+    height: 200px;
+}
+
+.image-placeholder-small {
+    height: 100px;
+}
+
+input[type="text"], select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.calculated-output {
+    font-weight: bold;
+}
+
+.final-width-label {
+    text-align: center;
+    font-weight: bold; /* this makes the text bold */
+    margin-bottom: 5px; /* adds a bit of space below the label */
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;  /* Adjust the value */
+}
+
+.wide-button {
+    width: 100px; /* adjust as needed */
+}
