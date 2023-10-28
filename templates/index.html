@@ -18,10 +18,10 @@
 
     <div class="row mb-4">
         <div class="col-md-6">
-            <div class="image-placeholder">IMAGE OF 2D PATTERN</div>
+            <img src="{{ url_for('static', filename='images/2D_Pattern_No_BackG.png') }}" class="image-placeholder">
         </div>
         <div class="col-md-6">
-            <div class="image-placeholder">IMAGE OF TEXTURE WITH WIDTH CALLOUT</div>
+            <img src="{{ url_for('static', filename='images/Original_Size_Texture.png') }}" class="rectangle-image">
         </div>
     </div>
 
@@ -57,23 +57,12 @@
 
     <div class="row mb-5">
         <div class="col-md-6">
-            <div class="image-placeholder">IMAGE OF 3D GARMENT WITHOUT RESIZING</div>
+            <img src="{{ url_for('static', filename='images/Not_Seamless_Render_No_BackG.png') }}" class="image-placeholder">
             <p class="text-center">BEFORE</p>
         </div>
         <div class="col-md-6">
-            <div class="image-placeholder">IMAGE OF 3D GARMENT WITHOUT RESIZING</div>
+            <img src="{{ url_for('static', filename='images/Seamless_Render_No_BackG.png') }}" class="image-placeholder">
             <p class="text-center">AFTER</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 text-center">
-            <div class="image-placeholder-small">IMAGE OF FINAL IMAGE FOR ORIGINAL SCALE UP</div>
-            <p>SCALE UP</p>
-        </div>
-        <div class="col-md-6 text-center">
-            <div class="image-placeholder-small">IMAGE OF FINAL IMAGE FOR ORIGINAL SCALE DOWN</div>
-            <p>SCALE DOWN</p>
         </div>
     </div>
 

@@ -3,22 +3,17 @@ body {
     background-color: #E9F4F7;
 }
 
-.image-placeholder, .image-placeholder-small {
-    background-color: #FFF;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #999;
-}
-
 .image-placeholder {
-    height: 200px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
 }
 
-.image-placeholder-small {
-    height: 100px;
+.rectangle-image {
+    width: 120px;
+    height: 166px;
+
 }
 
 input[type="text"], select, button {
