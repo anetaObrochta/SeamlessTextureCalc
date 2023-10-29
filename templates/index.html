@@ -3,8 +3,12 @@
 
 {% block content %}
 <form action="/" method="POST">
+
 <div class="container mt-5">
-    <h1 class="text-center mb-5">SEAMLESS TEXTURE CALCULATOR</h1>
+    <h1 class="text-center title-text">SEAMLESS TEXTURE CALCULATOR</h1>
+</div>
+
+<div class="calculation-container">
 
 {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -46,26 +50,27 @@
         </div>
     </div>
 
+    <div class="col-md-12 text-center">
 
-<div class="col-md-12 text-center">
     <div class="final-width-label">FINAL IMAGE WIDTH:</div>
     <div class="flex-container">
         <input type="text" class="calculated-output" id="result" value="{% if final_width %}{{ final_width }}{% endif %}" readonly style="width: 300px;"> <!-- Adjust the width value as needed -->
         <button id="copyButton" class="wide-button">COPY</button>
     </div>
 </div>
-
+</div>
+<div class="example-images-container">
+    <p class="example-label">EXAMPLE:</p>
     <div class="row mb-5">
         <div class="col-md-6">
-            <img src="{{ url_for('static', filename='images/Not_Seamless_Render_No_BackG.png') }}" class="image-placeholder">
-            <p class="text-center">BEFORE</p>
+            <img src="{{ url_for('static', filename='images/Not_Seamless_Render_No_BackG.png') }}" class="square-image">
+            <p class="example-label">BEFORE</p>
         </div>
         <div class="col-md-6">
-            <img src="{{ url_for('static', filename='images/Seamless_Render_No_BackG.png') }}" class="image-placeholder">
-            <p class="text-center">AFTER</p>
+            <img src="{{ url_for('static', filename='images/Seamless_Render_No_BackG.png') }}" class="square-image">
+            <p class="example-label">AFTER</p>
         </div>
     </div>
-
 </div>
 
 <script>

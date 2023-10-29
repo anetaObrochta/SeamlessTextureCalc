@@ -1,19 +1,46 @@
 
 body {
-    background-color: #E9F4F7;
+    background-image: url('/static/1x1_Grid_50_Opacity_Small.png');
+    background-repeat: repeat;
+    background-color: #FFFFFF;
+}
+
+.calculation-container {
+    background-color: #E9F4F6;
+    padding: 20px;              /* Adds some space around the content inside the container */
+    margin: 40px 0; /* Add some vertical spacing between containers */
+    border-radius: 20px;        /* Rounds the corners of the container */
+}
+
+.example-images-container {
+    background-color: #E9F4F6;
+    padding: 20px;              /* Adds some space around the content inside the container */
+    margin: 40px 0; /* Add some vertical spacing between containers */
+    border-radius: 20px;        /* Rounds the corners of the container */
+}
+
+.title-text {
+    font-size: 60px;
 }
 
 .image-placeholder {
+    margin-top: 60px;
     width: 100%;
-    max-width: 300px;
+    max-width: 450px;
     height: auto;
-
 }
 
 .rectangle-image {
-    width: 120px;
-    height: 166px;
+    margin-top: 60px;
+    width: 200px;
+    height: 246px;
+}
 
+.square-image {
+    margin-top: 60px;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 30px;
 }
 
 input[type="text"], select, button {
@@ -29,18 +56,30 @@ input[type="text"], select, button {
 }
 
 .final-width-label {
+    margin-top: 50px;
+    padding: 0px;
     text-align: center;
-    font-weight: bold; /* this makes the text bold */
-    margin-bottom: 5px; /* adds a bit of space below the label */
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1px; /* adds a bit of space below the label */
+}
+
+.example-label {
+    margin-top: 25px;
+    padding: 0px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1px; /* adds a bit of space below the label */
 }
 
 .flex-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;  /* Adjust the value */
+    margin-bottom: 80px;
 }
 
 .wide-button {
-    width: 100px; /* adjust as needed */
+    width: 100px;
 }
