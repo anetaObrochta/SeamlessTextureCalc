@@ -31,10 +31,10 @@
 
     <div class="row mb-4">
         <div class="col-md-6">
-            <input type="text" name="pattern_width" placeholder="INPUT 2D PATTERN WIDTH">
+            <input type="text" name="pattern_width" placeholder="INPUT 2D PATTERN WIDTH" value="{{ request.form['pattern_width'] }}">
         </div>
         <div class="col-md-6">
-            <input type="text" name="image_width" placeholder="INPUT TEXTURE WIDTH">
+            <input type="text" name="image_width" placeholder="INPUT TEXTURE WIDTH" value="{{ request.form['image_width'] }}">
         </div>
     </div>
 

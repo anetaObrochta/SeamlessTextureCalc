@@ -7,8 +7,12 @@ app.secret_key = "secret_key"  # Required for flash messages
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    final_width = None
+    pattern_width = ""
+    image_width = ""
+    final_width = ""
     if request.method == 'POST':
+        pattern_width = request.form['pattern_width']
+        image_width = request.form['image_width']
         try:
             pattern_width = float(request.form.get('pattern_width'))
             image_width = float(request.form.get('image_width'))
@@ -34,7 +38,8 @@ def index():
             flash("Invalid input. Please check the values and try again.")
             return redirect(url_for('index'))
 
-    return render_template('index.html', final_width=final_width)
+    return render_template('index.html',
+                           pattern_width=pattern_width, image_width=image_width, final_width=final_width)
 
 
 if __name__ == '__main__':
